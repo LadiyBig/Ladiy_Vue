@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="class_list">
+        <ul>
+            <li class='table_list' v-for="item in items">
+                <div class="table" v-on:click="{{click(item.class_id)}}">
+                    <div class="table_name">{{item.class}}</div>
+                    <img class='row_img' src="images/row.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+	<div id="app">
+		<p v-if="willShow">显示显示显示</p>
+		<p v-else>隐藏隐藏隐藏隐藏</p>
+		<button @click="fn()">改变</button>
+	  </div>
+<style>
+    body{
+        background-color: #e9eef2;
+    }
+    .table_list{
+        height:150;
+        justify-content: center;
+        padding-left:40;
+        padding-right:40;
+        background-color: #ffffff;
+        border-bottom-style:'solid';
+        border-bottom-width:1;
+        border-bottom-color:#cbcbcb;
+    }
+    .table_name{
+        font-size:44;
+        font-family:'Microsoft YaHei';
+        color:#6c7079;
+    }
+    .row_img{
+        width: 17;
+        height:31;
+        position:absolute;
+        right:0;
+        top:30;
+    }
+</style>
+    <script src="js/common.js"></script>
+<script>
+    var EVALU_URL = 'http://apicloudsch.xlhb.com/v1/activity.api?access_token=sess_1959f4bd050344df50f0627b0a184715';
+
+    var id;
+    var app = new Vue({
+        el: '#class_list',
+        data: {
+            items: []
+        },
+        methods: {
+            click: function (id) {
+                alert(id);
+            }
+        },
+        created: function () {
+            var self = this;
+            $.jsonp(EVALU_URL, function (obj) {
+                //console.log(obj);
+                var results = obj.data;
+                if (Array.isArray(results.activity_data.list)) {
+                    for(var i = 0;i<results.activity_data.list.length;i++){
+                        var userArr=results.activity_data.list[i].user_arr;
+                        for(var j = 0;j<userArr.length;j++) {
+                            self.items.push (userArr[j]);
+                        }
+                        //return;
+                    }
+                    console.log(self.items);
+                }
+
+            })
+        }
+    });
+	var vm=new Vue({
+	  el:"#app",
+	  data:{
+		willShow:true
+	  },
+	  methods:{
+		fn:function(){
+		  if(this.willShow==true){
+			this.willShow=false;
+		  }else{
+			this.willShow=true
+		  }
+		}
+	  }
+	});
+</script>
+</body>
+</html>

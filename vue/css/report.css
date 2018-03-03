@@ -1,0 +1,197 @@
+.wrap {
+        font-family: "Microsoft YaHei";
+        background-color: #e9eef2;
+    }
+
+
+
+    .title_name{
+        font-size:0.8rem;
+        color:#6c7079;
+		text-align:center;
+		
+    }
+	
+	.time{
+		width: 100%;
+		padding: 0.2rem 3rem 0;
+		text-align: center;
+		color: #d4d6db;
+	}
+
+    .title_time{
+		float:left;
+        font-size:0.5rem;
+        margin-right:10px;
+    }
+
+
+    .item{
+		padding:0.5rem 0;
+		background-color: #ffffff;
+    }
+    .item_name{
+        font-size:0.5rem;
+        color:#6c7079;
+        margin-right:20;
+    }
+    .item_line{
+		float:left;
+        font-size:0.5rem; 
+    }
+    .item_class{
+		float:left;
+        font-size:0.5rem;
+    }
+
+
+
+    .name{
+		float:left;
+        font-size:1rem;
+    }
+
+    .msg_syn{
+        font-size: 1.5rem;
+        color: #686868;
+        text-align: left;
+        padding-top: 0;
+        height:40px;
+		line-height:40px;
+        background-color: #ffffff;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #60d7ba;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #eeeeee;
+    }
+    .syn{
+		float:left;
+        width:15px;
+        height:15px;
+        border-radius:7.5px;
+        margin-left:15px;
+		margin-top:12px;
+		margin-right:15px;
+        background-color: #60d7ba;
+    }
+
+
+    .msg_explain{
+		font-size: 1.5rem;
+        color: #686868;
+        text-align: left;
+        padding-top: 0;
+        height:40px;
+		line-height:40px;
+        background-color: #ffffff;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #f2c684;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #eeeeee;
+    }
+    .explain{
+        float:left;
+        width:15px;
+        height:15px;
+        border-radius:7.5px;
+        margin-left:15px;
+		margin-top:12px;
+		margin-right:15px;
+        background-color: #f2c684;
+    }
+
+    .msg_analysis{
+		font-size: 1.5rem;
+        color: #686868;
+        text-align: left;
+        padding-top: 0;
+        height:40px;
+		line-height:40px;
+        background-color: #ffffff;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #ff8c74;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #eeeeee;
+    }
+    .analysis{
+        float:left;
+        width:15px;
+        height:15px;
+        border-radius:7.5px;
+        margin-left:15px;
+		margin-top:12px;
+		margin-right:15px;
+        background-color: #ff8c74;
+    }
+
+    .msg_station{
+		font-size: 1.5rem;
+        color: #686868;
+        text-align: left;
+        padding-top: 0;
+        height:40px;
+		line-height:40px;
+        background-color: #ffffff;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: #efa1c3;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #eeeeee;
+    }
+    .station{
+        float:left;
+        width:15px;
+        height:15px;
+        border-radius:7.5px;
+        margin-left:15px;
+		margin-top:12px;
+		margin-right:15px;
+        background-color: #efa1c3;
+    }
+
+    .msg_more {
+		float:right;
+		width:30px;
+        height:30px;
+        margin-top:0;
+        margin-bottom:0;
+        padding-right:10px;
+        color: #7c7c7c;
+		/*background: url(../images/open.png) no-repeat;*/
+    }
+
+    .msg_content{
+        height:150px;
+        font-size:0.8rem;
+        margin-top:0;
+        margin-bottom:0;
+        color: #bdc0c7;
+        background-color: #f5f7f8;
+    }
+
+    .msg_metal {
+        height:150px;
+        margin-top:1px;
+        margin-bottom:1rem;
+		padding-top:0.5rem;
+        padding-left:0.8rem;
+        padding-right:0.3rem;
+        color: #bdc0c7;
+		background-color: #ffffff;
+    }
+
+
+    .my_msg {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 20px;
+        background-color: #fff;
+		
+    }

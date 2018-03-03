@@ -1,0 +1,106 @@
+html,body{width: 100%; height: 100%;}
+
+body{font-family: Arial, "微软雅黑";
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    position: relative;
+}
+
+body{
+	margin:0;
+	padding:0;
+}
+
+.wrap {
+	width:100%;
+    height:100%;
+	font-family: "Microsoft YaHei";
+	background-color: #e9eef2;
+}
+
+/* 初始化一些样式 */
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    /* 去除移动端 默认的 手指 点击 高亮效果  transparent 透明*/
+    -webkit-tap-highlight-color: transparent;
+
+    /* 添加 盒子模型 为了 优先 保证 盒子的 大小 */
+    -webkit-box-sizing:border-box ;
+    box-sizing: border-box;
+}
+
+/* a标签 */
+a{
+    text-decoration: none;
+
+}
+
+ul,ol{
+    list-style: none;
+}
+
+/* 移动端 会取出 他四周的 边框 */
+input{
+    border: none;
+    outline: none;
+    /* 有一些 移动端的浏览器 会有默认的 3d效果 比如 阴影,3d渐变 */
+    -webkit-appearance: none;
+}
+
+/* 浮动 */
+/* 左浮动 */
+.f_left{
+    float: left;
+}
+
+/* 右浮动 */
+.f_right{
+    float: right;
+}
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+/*公共样式*/
+html,body{width: 100%; height: 100%;}
+
+body{font-family: Arial, "微软雅黑";
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    position: relative;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.wrap {
+    width:100%;
+    height:100%;
+    font-family: "Microsoft YaHei";
+    background-color: #e9eef2;
+}
+
+

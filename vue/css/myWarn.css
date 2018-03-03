@@ -1,0 +1,331 @@
+/*搜索框*/
+.search{
+    width:100%;
+    text-align: center;
+    position:relative;
+	padding:3% ;
+}
+.input{
+    width:80%;
+    height:50px;
+    font-family:'Microsoft YaHei';
+    font-size:18px;
+    color:#bdc4c7;
+}
+#search_img{
+	float: left;
+    width: 10%;
+    padding: 12px 5px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+}
+#cancle_img {
+	float: right;
+    width: 10%;
+    padding: 12px 5px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+/*搜索结果*/
+.result{
+    width:100%;
+	padding-top:0.5rem;
+	margin-bottom:0.5rem;
+    background-color: #fff;
+}
+.result_title{
+    height:50px;
+    width:100%;
+    line-height:50px;
+    font-size:18px;
+    font-family:'Microsoft YaHei';
+    color:#6c7079;
+}
+.result_body{
+    width:100%;
+}
+.result_detail{
+    width:100%;
+    color:#95989e;
+	margin:0.5rem 0;
+	background-color: #ffffff
+}
+
+.scroller{
+        background-color:#e9eef2;
+    }
+    .wrap{
+        font-family: 'Microsoft YaHei UI';
+    }
+
+    .search_img{
+        width:30;
+        height:30;
+        position:absolute;
+        top:40;
+        left:20;
+    }
+    .cancle_img{
+        width:24;
+        height:24;
+        position: absolute;
+        right:44;
+        top:40;
+    }
+    .input{
+        height: 100;
+        font-size: 40;
+        color:#bdc4c7;
+        border-radius: 10;
+        padding-left:62;
+        font-family:'Microsoft YaHei UI';
+    }
+    .warn_title{
+        height:140;
+        border-top-style:'solid';
+        border-top-width:1;
+        border-top-color:#ececec;
+        background-color: #ffffff;
+        padding-left:30;
+        padding-right:30;
+    }
+	
+	ul{width:100%}
+	 
+	li{float:left; width:33%;text-align:center}
+	
+    .new_warn{
+        font-size:1.2rem;
+        color:#5dbfdf;
+        font-family:'Microsoft YaHei';
+    }
+    .un_new{
+		font-size:1.2rem;
+        color:#9498a2;
+        font-family:'Microsoft YaHei UI';
+    }
+    .month_warn{
+        margin-right:120px;
+        font-size:44px;
+        color:#5dbfdf;
+        font-family:'Microsoft YaHei UI';
+    }
+    .un_month{
+        margin-right:120px;
+        font-size:44px;
+        color:#9498a2;
+        font-family:'Microsoft YaHei UI';
+    }
+    .total_warn{
+        font-size:44px;
+        color:#5dbfdf;
+        font-family:'Microsoft YaHei UI';
+    }
+    .un_total{
+        font-size:44px;
+        color:#9498a2;
+        font-family:'Microsoft YaHei UI';
+    }
+
+    .bor{
+       width: 32%;
+	   border-bottom-style: solid;
+	   border-bottom-width: 2px;
+	   border-bottom-color: #5dbfdf;
+	   margin:0.5rem auto;
+    }
+    .un_bor{
+        width:80px;
+        border-bottom-style:solid;
+        border-bottom-width:0;
+        border-bottom-color:#5dbfdf;
+        margin-left:50px;
+        align-items: center;
+        justify-content: center;
+    }
+    .total_bor{
+        width:95px;
+        border-bottom-style:solid;
+        border-bottom-width:8px;
+        border-bottom-color:#5dbfdf;
+        margin-right:50px;
+    }
+    .body_title{
+		margin:0 1rem;
+        border-bottom-style:solid;
+        border-bottom-width:1px;
+        border-bottom-color:#e8e8e8;
+    }
+    .row{
+        margin-top:20;
+        background-color: #ffffff;
+        padding-left:20;
+        padding-right:20;
+    }
+    .type{
+		float: left;
+	    width: 50px;
+	    height: 30px;
+	    text-align: center;
+	    line-height: 30px;
+	    background-color: #cdcfd5;
+	    color: #ffffff;
+	    font-size: 0.9rem;
+	    border-radius: 35px;
+	    margin: 1rem 1rem 1rem 0;
+    }
+    .name{
+		float:left;
+		height: 30px;
+	    text-align: center;
+	    line-height: 30px;
+        font-size:1.2rem;
+        color:#6c7079;
+		margin: 1rem 0;
+    }
+    .line{
+		float:left;
+		height: 30px;
+	    text-align: center;
+	    line-height: 30px;
+		margin:1rem;
+        color:#bdc0c7;
+    }
+    .class{
+		float:left;
+        height: 30px;
+	    text-align: center;
+	    line-height: 30px;
+		margin:1rem 0;
+        font-size:1.2rem;
+        color:#bdc0c7;
+    }
+	
+	.body_body{
+		margin-top:1rem;
+	}
+	
+    .body_top{
+        padding:0 1rem;
+    }
+
+    .body_center{
+		margin-top:0.5rem;
+        padding:0 1rem;
+        font-size:1rem;
+        color:#9498a2;
+		white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .test{
+		float:left;
+        font-size:1.2rem;
+        font-family: 'Microsoft YaHei UI';
+        color:#6c7079;
+    }
+    .date{
+		float:right;
+        font-size:1.2rem;
+        font-family:'Microsoft YaHei UI';
+        color:#bdc0c7;
+    }
+    .body_bottom{
+        padding-top: 1.2rem;
+		padding-bottom: 1.2rem;
+    }
+    .warn_factor{
+		float:left;
+        width:32%;
+        height:40px;
+        border-style:solid;
+        border-width:1px;
+        border-color:#bbbcbc;
+        border-radius:50px;
+        margin-left:15%;
+    }
+    .warn_factor_sign_1{
+		float: left;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		margin: 0.4rem 0 0.4rem 0.6rem;
+		background-color: #f95c5c;
+		border-radius: 30px;
+		text-align: center;
+		color: #ffffff;
+    }
+    .warn_factor_sign_2{
+		float: left;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		margin: 0.4rem 0 0.4rem 0.6rem;
+        background-color: #ffae82;
+        border-radius: 30px;
+        text-align: center;
+        color:#ffffff;
+    }
+    .warn_factor_sign_3{
+		float: left;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		margin: 0.4rem 0 0.4rem 0.6rem;
+        background-color: #fbdd51;
+        border-radius: 30px;
+        text-align: center;
+        color:#ffffff;
+    }
+
+    .warn_factor_text{
+        font-size: 0.85rem;
+		height: 35px;
+		line-height: 35px;
+		color: #6c7079;
+		padding-right: 0.4rem;
+    }
+    .untreated{
+		float:left;
+        width:32%;
+        height:40px;
+        border-style:solid;
+        border-width:1px;
+        border-color:#bbbcbc;
+        border-radius:50px;
+		margin-left:8%;
+    }
+    .untreated_sign_no{
+		float: left;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		margin: 0.4rem 0 0.4rem 0.6rem;
+        background-color: #5dbfdf;
+        border-radius: 30px;
+        text-align: center;
+        color:#ffffff;
+    }
+    .untreated_sign_yes{
+		float: left;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		margin: 0.4rem 0 0.4rem 0.6rem;
+        background-color: #cdcfd5;
+        border-radius: 30px;
+        text-align: center;
+        color:#ffffff;
+    }
+    .untreated_text{
+       font-size: 0.85rem;
+	   height: 35px;
+	   line-height: 35px;
+	   color: #6c7079;
+    }

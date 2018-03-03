@@ -1,0 +1,19 @@
+.list{
+    width:100%;
+    background-color: #fff;
+}
+.list_detail{
+    width: 96%;
+    height: 70px;
+    border-bottom: 1px solid #d2d6da;
+    line-height:70px;
+    font-size:20px;
+    color:#6c7079;
+    padding-left:2%;
+    padding-right:2%;
+}
+.row{
+    font-size:40px;
+    color:#e0e2e5;
+    float: right;
+}

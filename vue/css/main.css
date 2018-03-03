@@ -1,0 +1,281 @@
+/*预警部分*/
+.warn_wrap {
+	width: 100%;
+	height: 458px;
+}
+
+.warn_img {
+	width: 1080px;
+	height: 458px;
+}
+
+.warn {
+	width: 100%;
+	height: 458px;
+	color: #fff;
+	margin:0;
+	padding:0;
+	background: url(http://static01.cdn.xlhb.com/resource/appcloud/images/warn.png) no-repeat;
+}
+
+.add_warn,.all_warn{
+   padding: 20%;
+   text-align: center;
+}
+
+
+
+.new_warn {
+	float:left;
+	width: 310px;
+	height: 310px;
+	border-radius: 155px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #fff;
+	margin-top:58px;
+	margin-left: 14%;
+	margin-right:3.5%;
+}
+
+.sum_warn {
+	float:left;
+	width: 310px;
+	height: 310px;
+	border-radius: 155px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #fff;
+	margin-top: 58px;
+	margin-right:14%;
+	margin-left:3.5%;
+}
+
+.new_number, .sum_number {
+	font-size: 100px;
+	color:#ffffff;
+}
+
+.new_text, .sum_text {
+	font-size: 40px;
+	color:#ffffff;
+}
+
+
+
+
+
+/*今日预约部分*/
+.today_order {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom:1rem;
+	margin-bottom: 2rem;
+	background-color: #fff;
+	border-bottom:1px solid #bdc0c7;
+}
+
+.today_title, .msg_title {
+	height: 120px;
+	line-height:120px;
+	align-items: center;
+	background-color: #fff;
+}
+
+.today_text, .title_test, .msg_text {
+	float:left;
+	font-size: 45px;
+	color: #686868;
+	text-align: left;
+}
+
+.today_date, .msg_more {
+	float:right;
+	font-size: 36px;
+	color: #7c7c7c;
+	
+}
+
+.order_time{
+	float:right;
+	width:40%;
+}
+
+.today_row {
+	height: 224px;
+	align-items: center;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #cbcbcb;
+	flex-direction: row
+}
+
+.item_name {
+	float:left;
+	width:25%;
+	height:5.5rem;
+	line-height:5.5rem;
+	font-size: 44px;
+	color: #686868;
+	text-align: left;
+}
+
+.item_class {
+	float:left;
+	width:20%;
+	height:5.5rem;
+	line-height:5.5rem;
+	font-size: 44px;
+	color: #7c7c7c;
+	margin-left: 5%;
+}
+
+.start_time {
+	float:left;
+	width: 46px;
+	height: 46px;
+	text-align: left;
+	padding-top: 1rem;
+}
+
+.start_time_text {
+	float:left;
+	font-size: 45px;
+	color: #ff659f;
+	margin-left: 20px;
+}
+
+.end_time {
+	float:left;
+	width: 46px;
+	height: 46px;
+	padding-top: 1rem;
+}
+
+.end_time_text {
+	float:left;
+	font-size: 45px;
+	color: #bdc0c7;
+	margin-left: 20px;
+	
+}
+
+/*测评活动部分*/
+.test_activity {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom:1rem;
+	background-color: #fff;
+
+}
+
+.test_img {
+	width: 100%;
+	height: 518px;
+}
+
+.test_all {
+	width: 100%;
+
+}
+
+.test_title {
+	height: 120px;
+	background-color: #fff;
+	padding-left: 30px;
+}
+
+.title_more {
+	font-size: 36px;
+	color: #7c7c7c;
+
+}
+
+.test_body {
+	width: auto;
+	height: 458px;
+	color: #fff;
+	margin:0 auto 2rem;
+	padding:2rem 2rem 0;
+	background: url(http://cloudcdn.xlhb.com/resource/appcloud/images/evaluation.png) no-repeat;	
+}
+
+.body_test {
+	font-size: 56px;
+	color: #5e5e60;
+
+}
+
+.body_table {
+	font-size: 32px;
+	color: #87888c;
+}
+
+
+.body-bottom{
+	margin-top:22%;
+}
+
+.finish_num {
+
+	font-size: 32px;
+	color: #757679;
+}
+
+.finish_range {
+	width: auto;
+	height: 20px;
+	background-color:#cccccc;
+	opacity:.5;
+	/*background-color: red;*/
+	border-radius: 20px;
+}
+
+/*我的记录部分*/
+.my_msg {
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-top: 20px;
+	background-color: #fff;
+}
+
+.msg_row {
+	height: 224px;
+	line-height:224px;
+	padding-top: 50px;
+	border-top-width: 1;
+	border-top-style: solid;
+	border-top-color: #cbcbcb;
+}
+
+.msg_name {
+	font-size: 44px;
+	color: #686868;
+	text-align: left;
+}
+
+.msg_class {
+	font-size: 38;
+	color: #bdc0c7;
+	margin-left: 60;
+}
+
+.msg_date {
+	height；5.5rem;
+	line-height:5.5rem;
+	float:right;
+	font-size: 40px;
+	color: #bdc0c7;
+}
+
+.msg_con{
+	height:60%;
+	line-height:60%;
+}
+
+.msg_msg {
+	height:50px;
+	line-height:50px;
+	font-size: 40px;
+	color: #bdc0c7;
+}

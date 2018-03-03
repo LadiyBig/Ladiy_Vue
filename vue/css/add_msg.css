@@ -1,0 +1,37 @@
+.wrap{
+    width:100%;
+}
+.add_msg{
+    width:100%;
+    padding-left:1rem;
+    padding-right:1rem;
+    background-color: #fff;
+}
+.add_title{
+    height:50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.name{
+    font-size:20px;
+    color:#6c7079;
+    padding-right:0.5rem;
+}
+.line{
+    color:#bdc0c7;
+}
+.class{
+    font-size:20px;
+    color:#6c7079;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+}
+.row{
+    float: right;
+    font-size:24px;
+    color:#bdc0c7;
+}
+.msg_text{
+    width: 100%;
+    
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>我的预警</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/myWarn.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="search">
+			<img id="search_img" src="images/search.png" alt="">
+			<input class='input' type="text" placeholder="搜索学生">
+			<img id="cancle_img" src="images/cancle.png" alt="">
+		</div>
+		<div class="result">
+			<ul class="clearfix">
+				<li id="unComplete" class="cur">
+					<div>
+                        <div class="new_warn" onclick="changeList(1)">昨日新增</div>
+                        <div class="bor"></div>
+                    </div>
+				</li>
+				<li id="unComplete" class="cur">
+					<div>
+                        <div class="un_new" onclick="changeList(1)">近30天内</div>
+                        <div class="un_bor"></div>
+                    </div>
+				</li>
+				<li id="unComplete" class="cur">
+					<div>
+                        <div class="un_new" onclick="changeList(1)">全部</div>
+                        <div class="un_bor"></div>
+                    </div>
+				</li>
+			</ul>
+			<div id="warn_new">
+				<ul class="result_body">
+					<li class="result_detail">
+						<div class="body_title clearfix">
+                            <div class="type">学生</div>
+                            <div class="name">张晓萌</div>
+                            <div class="line">|</div>
+                            <div class="class">初二(3)班</div>
+                        </div>
+						<div class="body_body clearfix">
+							<div class="body_top clearfix">
+								<div class="test">学生测试数据核查</div>
+								<div class="date">2016.12.06</div>
+							</div>
+							<div class="body_center clearfix">中学生心理健康综合量表、中学生心理健康综合量表</div>
+						</div>
+						<div class="body_bottom clearfix">
+							<div class="warn_factor" onclick="IntoWarnFactory" data-id="{{item.scale_id}}">
+								<div class="warn_factor_sign_1">!</div>
+								<div class="warn_factor_text">预警因子</div>
+							</div>
+							<div class="untreated">
+								<text class="untreated_sign_no">...</text>
+								<text class="untreated_text">未处理</text>
+							</div>
+                        </div>
+					</li>
+				</ul>
+			</div>
+			<div id="warn_30">
+				<ul class="result_body">
+					<li class="result_detail">
+						<div class="body_title clearfix">
+                            <div class="type">学生</div>
+                            <div class="name">张晓萌</div>
+                            <div class="line">|</div>
+                            <div class="class">初二(3)班</div>
+                        </div>
+						<div class="body_body clearfix">
+							<div class="body_top clearfix">
+								<div class="test">学生测试数据核查</div>
+								<div class="date">2016.12.06</div>
+							</div>
+							<div class="body_center clearfix">中学生心理健康综合量表、中学生心理健康综合量表</div>
+						</div>
+						<div class="body_bottom clearfix">
+							<div class="warn_factor" onclick="IntoWarnFactory" data-id="{{item.scale_id}}">
+								<div class="warn_factor_sign_2">!</div>
+								<div class="warn_factor_text">预警因子</div>
+							</div>
+							<div class="untreated">
+								<text class="untreated_sign_yes">...</text>
+								<text class="untreated_text">已处理</text>
+							</div>
+                        </div>
+					</li>
+				</ul>
+			</div>
+			<div id="warn_all">
+				<ul class="result_body">
+					<li class="result_detail">
+						<div class="body_title clearfix">
+                            <div class="type">学生</div>
+                            <div class="name">张晓萌</div>
+                            <div class="line">|</div>
+                            <div class="class">初二(3)班</div>
+                        </div>
+						<div class="body_body clearfix">
+							<div class="body_top clearfix">
+								<div class="test">学生测试数据核查</div>
+								<div class="date">2016.12.06</div>
+							</div>
+							<div class="body_center clearfix">中学生心理健康综合量表、中学生心理健康综合量表</div>
+						</div>
+						<div class="body_bottom clearfix">
+							<div class="warn_factor" onclick="IntoWarnFactory" data-id="{{item.scale_id}}">
+								<div class="warn_factor_sign_3">!</div>
+								<div class="warn_factor_text">预警因子</div>
+							</div>
+							<div class="untreated">
+								<text class="untreated_sign_no">...</text>
+								<text class="untreated_text">未处理</text>
+							</div>
+                        </div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+		var baseUrl = 'http://apicloudsch.xlhb.com/v1/warning.api?access_token=sess_1959f4bd050344df50f0627b0a184715';
+		var type = 'new';
+		var num = 1;
+		var url = baseUrl + '&type='+type+'&page='+num;
+			//时间戳的转换
+		getLocalTime: function (ns) {
+			/*
+			 * nS:为传进来的时间戳
+			 * type:时间显示模式.若传入12则为12小时制,不传入则为24小时制
+			 */
+			//年月日时分秒
+			var Y, M, D, H, I, S;
+			//月日时分秒为单位时前面补零
+			function fillZero(v) {
+				if (v < 10) {
+					v = '0' + v;
+				}
+				return v;
+			}
+
+			var d = new Date(parseInt(ns / 1000) * 1000);
+			Y = d.getFullYear();
+			M = fillZero(d.getMonth() + 1);
+			D = fillZero(d.getDate());
+			H = fillZero(d.getHours());
+			I = fillZero(d.getMinutes());
+			S = fillZero(d.getSeconds());
+			var localTime = Y + '-' + M + '-' + D + ' ' + H + ':' + I + ':' + S;
+			return localTime;
+		},
+		 //点击切换list
+		changeList:function(sign){
+			var self = this;
+			if(sign =='1'){
+				self.warns=[
+					{news:'new_warn',new_bor:'bor',month:'un_month',month_bor:'un_bor',total:'un_total',total_bor:'un_bor'}
+				];
+				type = 'new';
+				url = baseUrl + '&type='+type+'&page='+num;
+				console.log(url);
+				this.renderData(url)
+			}else if(sign == '2'){
+				self.warns=[
+					{news:'un_new',new_bor:'un_bor',month:'month_warn',month_bor:'bor',total:'un_total',total_bor:'un_bor'}
+				];
+				type = '30';
+				url = baseUrl + '&type='+type+'&page='+num;
+				console.log(url);
+				this.renderData(url)
+			}else if(sign == '3'){
+				self.warns=[
+					{news:'un_new',new_bor:'un_bor',month:'un_month',month_bor:'un_bor',total:'total_warn',total_bor:'total_bor'}
+				];
+				type = 'all';
+				url = baseUrl + '&type='+type+'&page='+num;
+				console.log(url);
+				this.renderData(url)
+			}
+		},
+</script>
+</html>

@@ -1,0 +1,98 @@
+.wrap{
+    width:100%;
+    height:100%;
+    background-color: #e9eef2;
+
+}
+/*搜索框*/
+.search{
+    width:100%;
+    text-align: center;
+    position:relative;
+}
+.input{
+    width:94%;
+    height:50px;
+    background-color: #fff;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding-left:40px;
+    font-family:'Microsoft YaHei';
+    font-size:20px;
+    color:#bdc4c7;
+    border-radius: 8px;
+
+}
+#search_img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+}
+#cancle_img {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+}
+/*搜索结构title*/
+.warn{
+    width:100%;
+    background-color: #fff;
+}
+.warn_title{
+    width:100%;
+    height:70px;
+    border-bottom: 1px solid #cbcbcb;
+    line-height: 70px;
+    font-size:22px;
+    font-family:'Microsoft YaHei';
+    text-align: center;
+    color:#6c7079;
+}
+.red_warn,.org_warn{
+    margin-right:2rem;
+}
+.red_warn{
+    color:#5dbfdf;
+    padding-bottom:5px;
+    border-bottom: 3px solid #5dbfdf;
+}
+/*预警结果body*/
+.warn_body{
+    padding-left:1rem;
+    padding-right:1rem;
+}
+.warn_detail{
+    width:100%;
+    height:80px;
+    font-family:'Microsoft YaHei';
+    /*padding-top:10px;*/
+    border-bottom: 1px solid #cbcbcb;
+    line-height: 80px;
+}
+.type{
+    width:60px;
+    height:30px;
+    background-color: #cdcfd5;
+    text-align:center;
+    line-height:30px;
+    float: left;
+    border-radius: 30px;
+    color:#fff;
+    margin-right:2rem;
+   margin-top:25px;
+}
+.name{
+    float: left;
+    font-size:22px;
+    color:#95989e;
+    margin-right:2rem;
+}
+.class{
+    float: left;
+    font-size:22px;
+    color:#95989e;
+}

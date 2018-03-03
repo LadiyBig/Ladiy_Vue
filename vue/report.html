@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>测评报告</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/report.css">
+	<script src="js/vue.js"></script>
+	
+</head>
+<body>
+	<div  class="wrap">
+            <div class="item">
+                <div class="title_name">抑郁状态量表个人测评报告</div>
+                <div class='time clearfix'>
+                    <div class="title_time">用时:6秒</div>
+                    <div class="item_line">2016-11-09 11:38:25</div>
+                    <div class="item_class">星期三</div>
+                </div>
+            </div>
+            <div class="msg_syn clearfix">
+                <div class="syn"></div>
+                <div class="name">量表简介</div>
+                <div  class="msg_more" v-on:click="{{changeList(1)}}">></div>
+            </div>
+            <div id="willShow" class="msg_content"   v-if="willShow">
+                <div class="msg_metal">抑郁(Depression)是一种感到无力应付外界压力而产生的消极情绪，并伴有厌恶、痛苦、羞愧、自卑等情绪体验。被抑郁情绪困扰的人常常表现为：情绪低落、思维迟缓、郁郁寡欢；丧生兴趣、缺乏活力、不愿社交，做事打不起精神，对生活缺乏信心，体验不到快乐，食欲减退，失眠等。从外部观察可见表情冷漠，倦态疲乏。</div>
+            </div>
+            <div class="msg_explain clearfix">
+                <div class="explain"></div>
+                <div class="name">测试说明</div>
+                <div class="msg_more" v-on:click="{{changeList(2)}}">></div>
+            </div>
+            <div id="anShown" class="msg_content"  v-if="anShown">
+                <div class="msg_metal">抑郁(Depression)是一种感到无力应付外界压力而产生的消极情绪，并伴有厌恶、痛苦、羞愧、自卑等情绪体验。被抑郁情绪困扰的人常常表现为：情绪低落、思维迟缓、郁郁寡欢；丧生兴趣、缺乏活力、不愿社交，做事打不起精神，对生活缺乏信心，体验不到快乐，食欲减退，失眠等。从外部观察可见表情冷漠，倦态疲乏。</div>
+            </div>
+            <div class="msg_analysis">
+                <div class="analysis"></div>
+                <text class="name">因子分析</text>
+                <text class="msg_more" v-on:click="{{changeList(3)}}">></text>
+            </div>
+            <div class="msg_content"     v-if=="synShown">
+                <div class="msg_metal">抑郁(Depression)是一种感到无力应付外界压力而产生的消极情绪，并伴有厌恶、痛苦、羞愧、自卑等情绪体验。被抑郁情绪困扰的人常常表现为：情绪低落、思维迟缓、郁郁寡欢；丧生兴趣、缺乏活力、不愿社交，做事打不起精神，对生活缺乏信心，体验不到快乐，食欲减退，失眠等。从外部观察可见表情冷漠，倦态疲乏。</div>
+            </div>
+            <div class="msg_station"   v-for="station in station">
+                <div class="station"></div>
+                <text class="name">心灵加油站</text>
+                <text class="msg_more" v-on:click="{{changeList(4)}}">></text>
+            </div>
+            <div class="msg_content"     v-if="stationShown">
+                <div class="msg_metal">抑郁(Depression)是一种感到无力应付外界压力而产生的消极情绪，并伴有厌恶、痛苦、羞愧、自卑等情绪体验。被抑郁情绪困扰的人常常表现为：情绪低落、思维迟缓、郁郁寡欢；丧生兴趣、缺乏活力、不愿社交，做事打不起精神，对生活缺乏信心，体验不到快乐，食欲减退，失眠等。从外部观察可见表情冷漠，倦态疲乏。</div>
+            </div>
+    </div>
+	<script src="js/common.js"></script>
+	<script>
+		var id;
+		var app = new Vue({
+			el: '#willShow',
+			data: {
+				willShow:false,
+				items: [],
+				syn:[
+					{
+						name: '量表简介',
+						msg: '抑郁(Depression)是一种感到无力应付外界压力而产生的消极情绪，并伴有厌恶、痛苦、羞愧、自卑等情绪体验。被抑郁情绪困扰的人常常表现为：情绪低落、思维迟缓、郁郁寡欢；丧生兴趣、缺乏活力、不愿社交，做事打不起精神，对生活缺乏信心，体验不到快乐，食欲减退，失眠等。从外部观察可见表情冷漠，倦态疲乏。'
+					}
+				],
+				explain:[
+					{
+						name: '测试说明',
+						msg: '舒服撒发生的阿斯顿发多副三阿斯顿发多副三分地方撒范德萨电饭锅的说法是否更好地给的故事的故事电饭锅松德股份大幅度'
+					},
+				],
+				analysis:[
+					{
+						name: '因子分析',
+						msg: '舒服撒发生的阿斯顿发多副三阿斯顿发多副三分地方撒范德萨电饭锅的说法是否更好地给的故事的故事电饭锅松德股份大幅度'
+					},
+				],
+				station: [
+					{
+						name: '心灵加油站',
+						msg: '舒服撒发生的阿斯顿发多副三阿斯顿发多副三分地方撒范德萨电饭锅的说法是否更好地给的故事的故事电饭锅松德股份大幅度'
+					},
+
+				]
+			},
+			methods: {
+				click: function (id) {
+					alert(id);
+				},
+				changeList:function(sign){
+					console.log("sign=="+sign);
+					var self = this;
+					if(sign =='1'){
+						if(this.willShow==true){
+							this.willShow=false;
+						  }else{
+							this.willShow=true
+						  }
+					}else if(sign == '2'){
+						if(this.anShown==true){
+							this.anShown=false;
+						  }else{
+							this.anShown=true
+						  }
+					}else if(sign == '3'){
+						if(this.synShown==true){
+							this.synShown=false;
+						  }else{
+							this.synShown=true
+						  }
+					}else if(sign=='4'){
+						if(this.stationShown==true){
+							this.stationShown=false;
+						  }else{
+							this.stationShown=true
+						  }
+					}
+				}
+			},
+			created: function () {
+				var self = this;
+				/*$.jsonp(EVALU_URL, function (obj) {
+					//console.log(obj);
+					var results = obj.data;
+					if (Array.isArray(results.activity_data.list)) {
+						for(var i = 0;i<results.activity_data.list.length;i++){
+							var userArr=results.activity_data.list[i].user_arr;
+							for(var j = 0;j<userArr.length;j++) {
+								self.items.push (userArr[j]);
+							}
+							//return;
+						}
+						console.log(self.items);
+					}
+
+				})*/
+			}
+		});
+	</script>
+</body>
+
+</html>

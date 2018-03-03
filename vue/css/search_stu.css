@@ -1,0 +1,69 @@
+.wrap {
+	width:100%;
+    height:100%;
+	font-family: "Microsoft YaHei";
+	background-color: #e9eef2;
+}
+/*搜索框*/
+.search{
+    width:100%;
+    text-align: center;
+    position:relative;
+	padding:3% ;
+}
+.input{
+    width:80%;
+    height:50px;
+    font-family:'Microsoft YaHei';
+    font-size:18px;
+    color:#bdc4c7;
+
+}
+#search_img{
+    float: left;
+    width: 10%;
+    padding: 12px 5px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+}
+#cancle_img {
+    float: right;
+    width: 10%;
+    padding: 12px 5px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+/*搜索结果*/
+.result{
+    width:100%;
+    padding-left:1rem;
+    padding-right:1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #cbcbcb;
+}
+.result_title{
+    height:50px;
+    width:100%;
+    line-height:50px;
+    font-size:18px;
+    font-family:'Microsoft YaHei';
+    color:#6c7079;
+}
+.result_body{
+    width:100%;
+}
+.result_detail{
+    width:100%;
+    height:80px;
+    font-family:'Microsoft YaHei';
+    font-size:22px;
+    border-top: 1px solid #cbcbcb;
+    line-height: 80px;
+    color:#95989e;
+}

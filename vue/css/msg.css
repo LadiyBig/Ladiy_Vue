@@ -1,0 +1,44 @@
+.msg{
+    width: 100%;
+    background-color: #fff;
+}
+.msg_detail{
+    width:100%;
+    border-bottom: 1px solid #e8e8e8;
+    padding-left:2%;
+    padding-right:2%;
+    padding-bottom:2rem;
+}
+.msg_title{
+    width: 100%;
+    height:50px;
+    line-height:50px;
+}
+.msg_name{
+    font-size:22px;
+    color:#6c7079;
+    padding-right:0.5rem;
+}
+.msg_class{
+    font-size:22px;
+    color:#bdc0c7;
+    border-left:1px solid #bdc0c7;
+    padding-left:0.5rem;
+}
+.msg_date{
+    color:#bdc0c7;
+    float: right;
+}
+.msg_body{
+    width:100%;
+    background-color: #f5f7f8;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    font-size:20px;
+    font-family:'Microsoft YaHei';
+    color:#6c7079;
+}
+.msg_msg{
+    padding-left:10px;
+    text-align: center;
+}

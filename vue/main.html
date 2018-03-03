@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+	<link rel="stylesheet" href="css/base.css" /> 
+	<link rel="stylesheet" href="css/main.css" /> 
+    <script src="js/jquery.min.js"></script>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+        <div class="wrap" style="">
+            <!--预警部分-->
+            <div class="warn_wrap">
+                <div class="warn">
+                    <div class="new_warn clearfix" onclick="intoNew">
+                        <div class="add_warn">
+							<div class="new_number">0</div>
+							<div class="new_text">新增预警</div>
+						</div>
+                    </div>
+                    <div class="sum_warn" onclick="intoSum">
+					    <div class="all_warn">
+							<div class="sum_number">0</div>
+							<div class="sum_text">预警总数</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--今日预约部分-->
+            <div class="today_order">
+                <div class="today_title clearfix">
+                    <div class="today_text">今日预约</div>
+                    <div class="today_date">2016年12月02日</div>
+                    <!--<text class="today_date">{{year}}年{{month}}月{{day}}日</text>-->
+                </div>
+                <div class="today_detail clearfix">
+                        <div class="item_name">{{name}}</div>
+                        <div class="item_class">{{class}}</div>
+                        <div class="order_time">
+							<div class="clearfix">
+								<img class='start_time'src="http://static01.cdn.xlhb.com/resource/appcloud/images/start_time.png">
+								<div class="start_time_text">{{start_time}}</div>
+							</div>
+							<div class="clearfix">
+								<img class='end_time' src="http://static01.cdn.xlhb.com/resource/appcloud/images/end_time.png">
+								<div class="end_time_text">{{end_time}}</div>
+							</div>
+						</div>
+				</div>
+			</div>
+            <!--测评活动部分-->
+			<div class="test_activity">
+					<div class="today_title clearfix">
+						<div class="today_text">测评活动</div>
+						<div class="today_date">更多</div>
+					</div>
+			</div>
+			<div class="test_body">
+				<div class="body_test">2016年新生建档测评</div>
+				<div class="body_table">【普测】{{body_table}}</div>
+				<div class="body-bottom">
+					<div class="finish_num">完成{{test_range}}</div>
+					<div class="finish_num">完成20%</div>
+					<div class="finish_range"></div>
+				</div>
+			</div>
+			<!--我的记录部分-->
+            <div class="my_msg">
+                <div class="msg_title">
+                    <text class="msg_text">我的记录</text>
+                        <text class="msg_more" onclick="noteClick">更多</text>
+                </div>
+                <div class="msg_row clearfix">
+					<div class="msg_con clearfix">
+						<div class="item_name">{{name}}</div>
+						<div class="item_class">{{class}}</div>
+						<div class="msg_date">{{start_time}}</div>
+					</div>
+					<div class="msg_msg clearfix">上课时经常发呆，切不与老师和同学交流</div>
+				</div>
+            </div>
+          </div>
+
+        </div>
+</body>
+
+
+<!--script>
+
+    var SEARCH_URL = 'http://apicloudsch.xlhb.com/v1/homepage.api?access_token=sess_1959f4bd050344df50f0627b0a184715'
+        data: {
+            new_number: '',
+            sum_number: '',
+            body_table: '',
+            year: '',
+            month: '',
+            day: '',
+            items: [],
+            messages: [
+                {name: 'nail2005', class: '初二1班', date: '12-06', msg: '撒发生撒干啥干啥胜多负少电饭锅和低功耗的风格'},
+                {name: 'nail2005', class: '初二1班', date: '12-06', msg: '撒发生撒干啥干啥胜多负少发挥地方规划东方红东方'},
+                {name: 'nail2005', class: '初二1班', date: '12-06', msg: '撒发生撒干啥干啥胜多负少发挥地方规划代购护肤'}
+            ]
+        },
+        created: function () {
+            var maxStr = 15;
+            var self = this;
+//            超過15個字符显示。。。
+            for (var i = 0; i < self.messages.length; i++) {
+                if (self.messages[i].msg.length > maxStr) {
+                    self.messages[i].msg = self.messages[i].msg.substr(0, 15) + '...'
+                }
+            }
+//            获取今天的年月日
+            self.year = new Date().getFullYear();
+            self.month = new Date().getMonth() + 1;
+            self.day = new Date().getDate();
+            //渲染数据
+            var url = SEARCH_URL;
+            this.renderData(url)
+        },
+        methods: {
+            //渲染数据
+            renderData: function (url) {
+                var self = this;
+                stream.fetch({
+                    method: 'GET',
+                    url: url,
+                    type: 'jsonp'
+                }, function (res) {
+                    try {
+                        var results = res.data.data;
+                        self.new_number = results.warning_new_num;
+                        self.sum_number = results.warning_total_num;
+                        self.body_table = results.activity_data.activity_scale;
+                        if (Array.isArray(results.appoint_data)) {
+                            for (var i = 0; i < results.appoint_data.length; i++) {
+                                //姓名班级
+                                var object = {name: '', class: '',start_time:'',end_time:''};
+                                object.name = results.appoint_data[i].name;
+                                if(results.appoint_data[i].class_name == ''){
+                                    object.class = '--';
+                                }else{
+                                    object.class = results.appoint_data[i].class_name;
+                                }
+                                //时间戳的转换
+                                object.start_time = self.getLocalTime(parseInt(results.appoint_data[i].ap_time)).substr(12, 5);
+                                object.end_time = self.getLocalTime(parseInt(results.appoint_data[i].ap_time) + 3600000).substr(12, 5)
+                                self.items.push(object);
+                            }
+                        }
+                    } catch (e) {
+
+                    }
+                },function(res){
+
+
+                })
+            },
+//          时间戳转换成日期
+            getLocalTime: function (ns) {
+                console.log("ns==" + ns);
+                /*
+                 * nS:为传进来的时间戳
+                 * type:时间显示模式.若传入12则为12小时制,不传入则为24小时制
+                 */
+                //年月日时分秒
+                var Y, M, D, H, I, S;
+                //月日时分秒为单位时前面补零
+                function fillZero(v) {
+                    if (v < 10) {
+                        v = '0' + v;
+                    }
+                    return v;
+                }
+
+                var d = new Date(parseInt(ns / 1000) * 1000);
+                Y = d.getFullYear();
+                M = fillZero(d.getMonth() + 1);
+                D = fillZero(d.getDate());
+                H = fillZero(d.getHours());
+                I = fillZero(d.getMinutes());
+                S = fillZero(d.getSeconds());
+                var localTime = Y + '年' + M + '月' + D + '日 ' + H + ':' + I + ':' + S;
+                console.log("localTime==" + localTime);
+                return localTime;
+            },
+            //点击预警模块进入相应模块
+            intoNew:function(e) {
+                var nextUrl = '?page=dist/myWarn.js';
+                var params = {'url': nextUrl};
+                navigator.push(params, function (e) {
+                    console.log('i am the callback.')
+                });
+            },
+            intoSum:function(e) {
+                var nextUrl = '?page=dist/myWarn.js';
+                var params = {'url': nextUrl};
+                navigator.push(params, function (e) {
+                    console.log('i am the callback.')
+                });
+            },
+            //我的记录部分点击更多进入记录模块内页
+            noteClick:function(e) {
+                var nextUrl = '?page=dist/msg.js';
+                var params = {'url': nextUrl};
+                navigator.push(params, function (e) {
+                    console.log('i am the callback.')
+                });
+            },
+            //我的测评部分点击更多进入测评模块
+            testClick:function(e) {
+                var nextUrl = '?page=dist/test.js';
+                var params = {'url': nextUrl};
+                navigator.push(params, function (e) {
+                    console.log('i am the callback.')
+                });
+            }
+        }
+</script-->
+
+
